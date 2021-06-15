@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-family: "Cinzel Decorative", cursive;
+}
+:root {
+  --glavna: #3586ff;
+}
+.val {
+  height: 70vh;
+  position: relative;
+  width: 100%;
+  background-color: var(--glavna);
+}
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 6vh;
+  width: 100%;
+  background-color: white;
+}
+.nav .lista {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav .lista img {
+  height: 4.5vh;
+}
+.nav .lista .linkovi {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+}
+.nav .lista .linkovi a {
+  text-decoration: none;
+  color: black;
+  font-family: "poppins";
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  font-weight: 400;
+  font-size: 1.1rem;
+  position: relative;
+  padding: 4px;
+}
+.nav .lista .linkovi a::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  height: 70%;
+  width: 1.5%;
+  background-color: var(--glavna);
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+.nav .lista .linkovi a:hover {
+  animation: linkovi 0.5s forwards;
+}
+.nav .lista .linkovi a:hover::before {
+  width: 100%;
+}
+@keyframes linkovi {
+  to {
+    color: white;
+  }
+}
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(./img/wave.png);
+  background-size: 1000px 100px;
+  animation: valovi 3s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.25s);
+}
+@keyframes valovi {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+.wave#wave1 {
+  z-index: 100;
+  opacity: 1;
+  background-position-x: 400px;
+}
+.wave#wave2 {
+  z-index: 99;
+  opacity: 0.5;
+  background-position-x: 300px;
+}
+.wave#wave3 {
+  z-index: 98;
+  opacity: 0.2;
+  background-position-x: 200px;
+}
+.wave#wave4 {
+  z-index: 99;
+  opacity: 0.7;
+  background-position-x: 120px;
+}
+.banner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  height: 60vh;
+  margin-top: 15px;
+}
+
+.banner h2 {
+  font-size: 4rem;
+  letter-spacing: 5px;
+}
+.banner p {
+  font-size: 1.5rem;
+  color: #111;
+}
+.banner img {
+  height: 50px;
+}
+@media screen and (max-width: 455px) {
+  .val {
+    height: 55vh;
+  }
+  .nav .lista {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .nav .lista .linkovi {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+  }
+  .nav .lista .linkovi a {
+    font-weight: 500;
+    font-size: 0.7rem;
+    padding: 4px;
+  }
+  .nav .lista .linkovi a::before {
+    all: unset;
+  }
+  .nav .lista .linkovi a:hover {
+    all: unset;
+  }
+  .nav .lista .linkovi a:hover::before {
+    all: unset;
+  }
+
+  .wave {
+    height: 100px;
+  }
+  .banner {
+    height: 60vh;
+    padding: 0;
+    justify-content: flex-start;
+    margin-top: 30px;
+  }
+
+  .banner h2 {
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+  }
+  .banner p {
+    font-size: 1rem;
+    color: #111;
+  }
+  .banner img {
+    height: 40px;
+  }
+}
+@media screen and (min-width: 456px) and (max-width: 1111px) {
+  .val {
+    height: 55vh;
+  }
+  .nav .lista {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .nav .lista .linkovi {
+    width: 90%;
+    padding: 20px 0;
+  }
+  .nav .lista .linkovi a {
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 4px;
+  }
+  .nav .lista .linkovi a::before {
+    all: unset;
+  }
+  .nav .lista .linkovi a:hover {
+    all: unset;
+  }
+  .nav .lista .linkovi a:hover::before {
+    all: unset;
+  }
+  .wave {
+    height: 100px;
+  }
+  .banner {
+    height: 60vh;
+    padding: 0;
+    justify-content: flex-start;
+    margin-top: 30px;
+  }
+
+  .banner h2 {
+    font-size: 2rem;
+  }
+  .banner p {
+    font-size: 1.3rem;
+    color: #111;
+  }
+  .banner img {
+    height: 40px;
+  }
+}
+.about {
+  height: 100vh;
+}
